@@ -111,6 +111,8 @@ class Sign_up_3rdClass : AppCompatActivity() {
             if (`val`.equals(phone)) {
                 _id++
                 break
+            } else {
+                _id = 0
             }
         }
 

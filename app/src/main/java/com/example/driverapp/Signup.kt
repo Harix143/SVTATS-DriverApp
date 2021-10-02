@@ -106,10 +106,11 @@ class Signup : AppCompatActivity() {
 
 
         for (email in email_arrayList) {
-            if(`val`.equals(email, ignoreCase = true))
-            {
+            if (`val`.equals(email, ignoreCase = true)) {
                 _id++
                 break
+            } else {
+                _id = 0
             }
         }
 

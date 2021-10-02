@@ -62,7 +62,8 @@ class AddComplaint : AppCompatActivity() {
                 date,
                 status,
                 phone_No,
-                userClass
+                userClass,
+                "---------"
             )
 
             ref.child(key!!).push().setValue(addNewUser)

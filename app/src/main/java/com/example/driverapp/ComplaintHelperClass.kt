@@ -6,6 +6,7 @@ class ComplaintHelperClass(
     val date: String? = null,
     val status: String? = null,
     var userPhone_No: String? = null,
-    var userClass: String? = null
+    var userClass: String? = null,
+    var feedback: String? = null
 ) {
 }

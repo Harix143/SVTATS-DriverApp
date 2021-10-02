@@ -1,6 +1,7 @@
 package com.example.driverapp
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableStringBuilder
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.bold
+import androidx.core.text.color
 import androidx.core.text.italic
 import com.google.firebase.database.*
 import java.util.HashMap
@@ -61,6 +63,8 @@ class ViewExistingComplaints : AppCompatActivity() {
                             .append(obj!!.date)
                             .bold { append("\n" + "Status: ") }
                             .bold { italic { append(obj!!.status) } }
+                            .bold { append("\n" + "Feedback: ") }
+                            .color(Color.GREEN) { append(obj!!.feedback) }
                             .append("\n\n_____________________________________" + "\n\n")
                         complaints!!.append(s)
 
