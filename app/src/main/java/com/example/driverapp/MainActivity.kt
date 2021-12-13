@@ -41,17 +41,16 @@ class MainActivity : AppCompatActivity() {
 
         Handler().postDelayed(
             {
-//                val sessionManager =
-//                    SessionManager(this@Splash_Screen, SessionManager.SESSION_REMEMBERME)
-//                if (sessionManager.checkRememberMe()) {
-//                    val intent = Intent(this@Splash_Screen, Long::class.java)
-//                    startActivity(intent)
-//                    finish()
-//                } else {
+                val sessionManager =
+                    DriverSessionManager(this@MainActivity, DriverSessionManager.SESSION_REMEMBERME)
+                if (sessionManager.checkRememberMe()) {
+                    val intent = Intent(this@MainActivity, DashBoard::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
                 val intent = Intent(applicationContext, MakeUserSelection::class.java)
                 startActivity(intent)
-                finish()
-//                }
+                }
             },
             SPASH_SCREEN
         )

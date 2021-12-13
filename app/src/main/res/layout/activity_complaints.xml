@@ -84,9 +84,11 @@
                 android:text="@string/add_new_complaints"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:backgroundTint="@color/black"
                 app:cornerRadius="16dp"
-                app:elevation="5dp">
+                app:elevation="5dp"
+                app:backgroundTint="#008000"
+                app:icon="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:iconGravity="textEnd">
 
             </com.google.android.material.button.MaterialButton>
 
@@ -98,9 +100,11 @@
                 android:text="@string/view_exist_complaints"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:backgroundTint="@color/black"
                 app:cornerRadius="16dp"
-                app:elevation="5dp">
+                app:elevation="5dp"
+                app:backgroundTint="#0d6efd"
+                app:icon="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:iconGravity="textEnd">
 
             </com.google.android.material.button.MaterialButton>
 

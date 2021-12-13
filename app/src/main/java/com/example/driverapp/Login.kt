@@ -120,7 +120,7 @@ class Login : AppCompatActivity() {
                             phone_number,
                             password
                         )
-                        Toast.makeText(this@Login, "Welocome $name", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this@Login, "Welocome $name", Toast.LENGTH_SHORT).show();
                         val intent = Intent(applicationContext, DashBoard::class.java)
                         startActivity(intent)
                         finish()

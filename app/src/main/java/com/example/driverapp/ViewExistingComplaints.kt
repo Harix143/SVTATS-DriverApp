@@ -45,30 +45,37 @@ class ViewExistingComplaints : AppCompatActivity() {
             FirebaseDatabase.getInstance().getReference("Complaints").child(key)
         checkUser.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()) {
+                    for (studentDS in snapshot.children) {
 
-                for (studentDS in snapshot.children) {
+                        //progressBar!!.visibility = View.VISIBLE
+                        var obj = studentDS.getValue(ComplaintHelperClass::class.java)
+                        if (obj!!.userPhone_No.equals(phone_No) && obj!!.userClass.equals("Driver")) {
+                            id++
 
-                    //progressBar!!.visibility = View.VISIBLE
-                    var obj = studentDS.getValue(ComplaintHelperClass::class.java)
-                    if (obj!!.userPhone_No.equals(phone_No) && obj!!.userClass.equals("Driver")) {
-                        id++
+                            val s = SpannableStringBuilder()
+                                .bold { append("Complaint No: " + id) }
+                                .bold { append("\n\nTitle: ") }
+                                .append(obj!!.title)
+                                .bold { append("\n" + "Description: ") }
+                                .append(obj!!.description)
+                                .bold { append("\n" + "Date: ") }
+                                .append(obj!!.date)
+                                .bold { append("\n" + "Status: ") }
+                                .bold { italic { append(obj!!.status) } }
+                                .bold { append("\n" + "Feedback: ") }
+                                .color(Color.GREEN) { append(obj!!.feedback) }
+                                .append("\n\n_____________________________________" + "\n\n")
+                            complaints!!.append(s)
 
-                        val s = SpannableStringBuilder()
-                            .bold { append("Complaint No: " + id) }
-                            .bold { append("\n\nTitle: ") }
-                            .append(obj!!.title)
-                            .bold { append("\n" + "Description: ") }
-                            .append(obj!!.description)
-                            .bold { append("\n" + "Date: ") }
-                            .append(obj!!.date)
-                            .bold { append("\n" + "Status: ") }
-                            .bold { italic { append(obj!!.status) } }
-                            .bold { append("\n" + "Feedback: ") }
-                            .color(Color.GREEN) { append(obj!!.feedback) }
-                            .append("\n\n_____________________________________" + "\n\n")
-                        complaints!!.append(s)
-
+                        }
                     }
+                }
+                else
+                {
+                    Toast.makeText(this@ViewExistingComplaints, "No Complaints Exists!", Toast.LENGTH_SHORT)
+                        .show();
+                    finish()
                 }
             }
 

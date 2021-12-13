@@ -10,6 +10,9 @@
     <color name="grey">#344150</color>
     <color name="lightgrey">#cbcbcb</color>
 
+    <color name="green">#008080</color>
+    <color name="blue">#0047ab</color>
+
     <!--    <color name="transparent">#0000ffff</color>-->
 
 </resources>

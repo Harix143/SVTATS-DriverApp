@@ -65,6 +65,7 @@ class DashBoard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         drawerLayout!!.addDrawerListener(toggle)
         toggle.syncState()
         navView!!.setCheckedItem(R.id.nav_home)
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
         nametextView!!.setText(fullName)
         phonetextView!!.setText("Driver")
         mainNametextView!!.setText(fullName)
@@ -92,17 +93,14 @@ class DashBoard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         startActivity(intent)
     }
 
-    fun callShifts(view: View) {
-        val intent = Intent(applicationContext, Shifts::class.java)
-        startActivity(intent)
-    }
 
     fun callLogs(view: View) {
-        val intent = Intent(applicationContext, Logs::class.java)
+        val intent = Intent(applicationContext, TrackingActivity::class.java)
         startActivity(intent)
     }
 
     fun callSalary(view: View) {
+        //call logs
         val intent = Intent(applicationContext, Salary::class.java)
         startActivity(intent)
     }
@@ -115,12 +113,18 @@ class DashBoard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> Toast.makeText(this, "Home Button", Toast.LENGTH_SHORT).show()
-            R.id.nav_notif -> Toast.makeText(this, "Notification Button", Toast.LENGTH_SHORT).show()
-            R.id.nav_setting -> Toast.makeText(this, "Setting Button", Toast.LENGTH_SHORT).show()
-            R.id.nav_rateus -> Toast.makeText(this, "Rate Us Button", Toast.LENGTH_SHORT).show()
-            R.id.nav_rateStudents -> Toast.makeText(this, "Rate Student Button", Toast.LENGTH_SHORT)
-                .show()
-            R.id.nav_help -> Toast.makeText(this, "Help Button", Toast.LENGTH_SHORT).show()
+           // R.id.nav_notif -> Toast.makeText(this, "Notification Button", Toast.LENGTH_SHORT).show()
+            R.id.nav_setting -> {
+                val intent = Intent(applicationContext, Settings::class.java)
+                startActivity(intent)            }
+            R.id.nav_rateus -> {
+                val intent = Intent(applicationContext, RateUS::class.java)
+                startActivity(intent)
+            }
+
+           // R.id.nav_rateStudents -> Toast.makeText(this, "Rate Student Button", Toast.LENGTH_SHORT)
+             //   .show()
+            //R.id.nav_help -> Toast.makeText(this, "Help Button", Toast.LENGTH_SHORT).show()
             R.id.nav_logout -> {
                 Toast.makeText(this, "Logging Out", Toast.LENGTH_SHORT).show()
                 val sessionManager =
@@ -139,5 +143,10 @@ class DashBoard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun callViewDriver(view: View) {
+        val intent = Intent(applicationContext, Shifts::class.java)
+        startActivity(intent)
     }
 }

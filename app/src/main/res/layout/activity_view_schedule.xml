@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".View_Schedule">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/layout"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/viewDriver_back_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
+                    android:transitionName="transition_back_button" />
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/material_on_surface_stroke"
+                    android:onClick="callBack">
+
+                </Button>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/schedule_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="11dp"
+                android:text="@string/schedule"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="42sp"
+                android:transitionName="transition_crrate_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="30dp">
+
+                <TableRow
+                    android:background="@color/blue">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="@string/schedule_days"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="@string/schedule_PICKUP"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="@string/DROPOFF"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="@string/LEAVE"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        android:layout_weight="4"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Monday"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mon_pickup"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="8:30 a.m"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="2:30 p.m"
+                        android:id="@+id/mon_dropoff"
+
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="No"
+                        android:id="@+id/mon_lea"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Tuesday"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:id="@+id/tue_pickup"
+
+                        android:text="8:30 a.m"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="2:30 p.m"
+                        android:textColor="@color/black"
+                        android:id="@+id/tue_dropoff"
+
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="No"
+                        android:id="@+id/tue_lea"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Wednesday"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="8:30 a.m"
+                        android:id="@+id/wed_pickup"
+
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="2:30 p.m"
+                        android:textColor="@color/black"
+                        android:id="@+id/wed_dropoff"
+
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="No"
+                        android:id="@+id/wed_lea"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Thursday"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="8:30 a.m"
+                        android:id="@+id/thu_pickup"
+
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="2:30 p.m"
+                        android:id="@+id/thu_dropoff"
+
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="No"
+                        android:id="@+id/thu_lea"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_weight="4"
+                        android:layout_gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Friday"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="8:30 a.m"
+                        android:textColor="@color/black"
+                        android:id="@+id/fri_pickup"
+
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="2:30 p.m"
+                        android:textColor="@color/black"
+                        android:id="@+id/fri_dropoff"
+
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="No"
+                        android:id="@+id/fri_lea"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Saturday"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="8:30 a.m"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:id="@+id/sat_pickup"
+
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="2:30 p.m"
+                        android:textColor="@color/black"
+                        android:id="@+id/sat_dropoff"
+
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center_horizontal">
+
+                    </TextView>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="No"
+                        android:id="@+id/sat_lea"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+
+            </TableLayout>
+
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/black">
+            </View>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

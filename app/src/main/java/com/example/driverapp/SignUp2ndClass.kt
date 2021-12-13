@@ -45,7 +45,7 @@ class SignUp2ndClass : AppCompatActivity() {
         }
 
         radioButton = findViewById(radioGroup!!.checkedRadioButtonId)
-        val gender: String = " " + radioButton.text.toString();
+        val gender: String = radioButton.text.toString();
 
 
         val day = datePicker!!.dayOfMonth
